@@ -1,26 +1,23 @@
 import Header from '../Header'
 
-import {
-  HomeContainer,
-  HomeImageContainer,
-  MobileHomeImage,
-  DesktopHomeImage,
-} from './styledComponents'
+import './index.css'
 
 const Home = () => (
-  <HomeContainer>
+  <div className="home-container">
     <Header />
-    <HomeImageContainer>
-      <MobileHomeImage
+    <div className="home-image-container">
+      <img
+        className="mobile-home-image"
         src="https://assets.ccbp.in/frontend/react-js/home-sm-img.png"
         alt="home"
       />
-      <DesktopHomeImage
+      <img
+        className="desktop-home-image"
         src="https://assets.ccbp.in/frontend/react-js/home-lg-img.png"
         alt="home"
       />
-    </HomeImageContainer>
-  </HomeContainer>
+    </div>
+  </div>
 )
 
 export default Home

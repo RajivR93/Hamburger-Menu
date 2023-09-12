@@ -7,24 +7,12 @@ import {BsInfoCircleFill} from 'react-icons/bs'
 
 import './index.css'
 
-import {
-  NavHeader,
-  NavContent,
-  WebsiteLogo,
-  HamburgerIconButton,
-  ModalContainer,
-  CloseButton,
-  NavLinksList,
-  NavLinkItem,
-  NavLink,
-  NavLinkContent,
-} from './styledComponents'
-
 const Header = () => (
-  <NavHeader>
-    <NavContent>
+  <div className="nav-header">
+    <div className="nav-content">
       <Link to="/">
-        <WebsiteLogo
+        <img
+          className="website-logo"
           src="https://assets.ccbp.in/frontend/react-js/hamburger-menu-website-logo.png"
           alt="website logo"
         />
@@ -32,40 +20,45 @@ const Header = () => (
       <Popup
         modal
         trigger={
-          <HamburgerIconButton data-testid="hamburgerIconButton">
+          <button
+            className="hamburger-icon-button"
+            type="button"
+            data-testid="hamburgerIconButton"
+          >
             <GiHamburgerMenu size="30" />
-          </HamburgerIconButton>
+          </button>
         }
         className="popup-content"
       >
         {close => (
-          <ModalContainer>
-            <CloseButton
+          <div className="modal-container">
+            <button
+              className="close-button"
               type="button"
               data-testid="closeButton"
               onClick={() => close()}
             >
               <IoMdClose size="30" color="#616e7c" />
-            </CloseButton>
-            <NavLinksList>
-              <NavLinkItem>
-                <NavLink to="/" onClick={() => close()}>
+            </button>
+            <ul className="nav-links-list">
+              <li className="nav-link-item">
+                <Link className="nav-link" to="/" onClick={() => close()}>
                   <AiFillHome size="36" />
-                  <NavLinkContent>Home</NavLinkContent>
-                </NavLink>
-              </NavLinkItem>
-              <NavLinkItem>
-                <NavLink to="/about" onClick={() => close()}>
+                  <p className="nav-link-content">Home</p>
+                </Link>
+              </li>
+              <li className="nav-link-item">
+                <Link className="nav-link" to="/about" onClick={() => close()}>
                   <BsInfoCircleFill size="32" />
-                  <NavLinkContent>About</NavLinkContent>
-                </NavLink>
-              </NavLinkItem>
-            </NavLinksList>
-          </ModalContainer>
+                  <p className="nav-link-content">About</p>
+                </Link>
+              </li>
+            </ul>
+          </div>
         )}
       </Popup>
-    </NavContent>
-  </NavHeader>
+    </div>
+  </div>
 )
 
 export default withRouter(Header)

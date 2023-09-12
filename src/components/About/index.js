@@ -1,26 +1,23 @@
 import Header from '../Header'
 
-import {
-  AboutContainer,
-  AboutImageContainer,
-  MobileAboutImage,
-  DesktopAboutImage,
-} from './styledComponents'
+import './index.css'
 
 const About = () => (
-  <AboutContainer>
+  <div className="about-container">
     <Header />
-    <AboutImageContainer>
-      <MobileAboutImage
+    <div className="about-image-container">
+      <img
+        className="mobile-about-image"
         src="https://assets.ccbp.in/frontend/react-js/about-sm-img.png"
         alt="About"
       />
-      <DesktopAboutImage
+      <img
+        className="desktop-about-image"
         src="https://assets.ccbp.in/frontend/react-js/about-lg-img.png"
         alt="About"
       />
-    </AboutImageContainer>
-  </AboutContainer>
+    </div>
+  </div>
 )
 
 export default About
